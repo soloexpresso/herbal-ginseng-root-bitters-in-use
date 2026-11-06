@@ -14,7 +14,7 @@
 
 
 <!-- FunnelCraft Deep Analytics -->
-<script defer src="https://funnelcraftai.com/fc-analytics.js" data-fc-campaign="dc4fc4d6-1abb-4aab-9a1d-e05878232859" data-fc-endpoint="https://api.funnelcraftai.com/api/analytics/collect" data-fc-step="home"></script>
+<script defer src="https://app.funnelcraftai.com/fc-analytics.js" data-fc-campaign="dc4fc4d6-1abb-4aab-9a1d-e05878232859" data-fc-endpoint="https://app.funnelcraftai.com/api/analytics/collect" data-fc-step="home"></script>
 <!-- FunnelCraft AI Dependencies (Required for Tailwind CSS, Icons & Fonts) -->
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -1259,10 +1259,30 @@
         <p class="text-slate-600 text-sm max-w-xl mx-auto">Pay on delivery available nationwide. Our delivery agent will contact you to confirm your address before dispatch.</p>
       </div>
 
-      <!-- Custom Tally Form Embed Code Container -->
+      <!-- FunnelCraft Form Embed -->
       <div class="w-full max-w-2xl mx-auto my-2 sm:my-6">
-        <iframe src="" data-tally-src="https://tally.so/embed/vXGJVv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1283" frameborder="0" marginheight="0" marginwidth="0" title="Ginseng Herbal Root Form II" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+        <iframe id="fc-form-71a4744b14413bad9069c8dffc123600" src="https://app.funnelcraftai.com/form/71a4744b14413bad9069c8dffc123600" width="100%" height="800" style="border:none;background:transparent;width:100%;min-height:500px;transition:height 0.2s ease;" allowtransparency="true" scrolling="no" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <script>
+          (function(){
+            window.addEventListener('message', function(e) {
+              if (e.data && e.data.type === 'fc-resize-iframe' && (e.data.token === '71a4744b14413bad9069c8dffc123600' || !e.data.token)) {
+                var el = document.getElementById('fc-form-71a4744b14413bad9069c8dffc123600') || document.querySelector('iframe[src*="71a4744b14413bad9069c8dffc123600"]');
+                if (el && e.data.height) {
+                  var h = parseInt(e.data.height, 10);
+                  if (h && Math.abs(el.offsetHeight - h) > 2) {
+                    el.style.height = h + 'px';
+                    el.style.minHeight = h + 'px';
+                  }
+                }
+              }
+              if (e.data && e.data.type === 'fc-form-success') {
+                if (window.fcAnalytics && window.fcAnalytics.trackConversion) {
+                  window.fcAnalytics.trackConversion('form_submission', { goal: 'form_submission' });
+                }
+              }
+            });
+          })();
+        </script>
       </div>
     </div>
 
